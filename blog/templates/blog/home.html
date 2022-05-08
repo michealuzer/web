@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="our_img">
-                        <figure><img class="he_img" src="{{post.image.url}}" alt="#" height="display-size", width="display-size"/></figure>
+                        <figure><a href="{% url 'detail' post.id %}"><img class="he_img" src="{{post.image.url}}" alt="HELP" /></figure></a>
                     
                     
                         <div class="our_text_box position_box">
@@ -39,6 +39,5 @@
 
 {% endfor %}
     </div>    
-
 </div>
 {% endblock %}
