@@ -1,6 +1,7 @@
 from django.core.mail import send_mail
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Post
+from django.contrib import messages as m
 from django.views.generic import DetailView
 
 # Create your views here.
@@ -21,6 +22,8 @@ def home(request):
 
         message = "the message is:\n{data['message']}\nfrom: {data['name']} with email: {data['email']}\nhis/her number is: {data['phone']}"
         send_mail('contact',message,'',['michealuzer@gmail.com'])
+        m.success(request,f'thank you for getting in touch with us')
+        return redirect('home')
     context = {
         'posts': Post.objects.all()
     }
