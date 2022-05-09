@@ -102,6 +102,13 @@
             </section>
          </div>
       </header>
+      {% if messages %}
+         {% for message in messages %}
+            <div class="alert alert-{{message.tags}}">
+               {{message}}
+            </div>
+         {% endfor %}
+      {% endif %}
       {% block content %} {% endblock %}
      
       <!-- end Testimonial -->
@@ -127,16 +134,18 @@
                            <input class="form_contril" placeholder="Name " type="text" name="Name">
                         </div>
                         <div class="col-md-12">
-                           <input class="form_contril" placeholder="Phone Number" type="text" name="Phone">
+                           <input class="form_contril" placeholder="Phone Number" type="number" name="Phone">
                         </div>
                         <div class="col-md-12">
-                           <input class="form_contril" placeholder="Email" type="text" name="Email">
+                           <input class="form_contril" placeholder="Email" type="email" name="Email">
                         </div>
                         <div class="col-md-12">
                            <textarea class="textarea" rows="10" placeholder="Message" type="text" name="Message"></textarea>
                         </div>
                         <div class="col-sm-12">
                            <button type="submit" class="btn btn-success">Send</button>
+                           <button type="" class="btn btn-danger btn-lg ">donate</button>
+
                         </div>
                      </div>
                   </form>
