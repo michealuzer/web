@@ -46,7 +46,7 @@ def about(request):
         }
 
         message = "the message is:\n{data['message']}\nfrom: {data['name']} with email: {data['email']}\nhis/her number is: {data['phone']}"
-        # send_mail('contact',message,'',['michealuzer@gmail.com'])
+        send_mail('contact',message,'',['michealuzer@gmail.com'])
         messages.success(request, 'thank you for getting in touch with us' )
 
         return redirect('home')
