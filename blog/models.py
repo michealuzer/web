@@ -7,5 +7,7 @@ from django.utils import timezone
 class Post(models.Model):
     title = models.CharField(max_length=100)
     image = models.ImageField(default='default.jpg', upload_to ='pictures')
-    content = models.TextField()
+    content_title = models.TextField()
+    content_all = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
+
